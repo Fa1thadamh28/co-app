@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description>CSU Template</afc:description>
+            <afc:display-name>csuTempl</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>content</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>pageTitle</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+                <afc:default-value>CSU Version Control</afc:default-value>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelStretchLayout id="pt_psl1" topHeight="58px" bottomHeight="15px">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top">
+            <af:panelHeader text="-" id="pt_ph1">
+                <f:facet name="context">
+                    <af:panelGroupLayout id="pt_pgl1">
+                        <af:spacer width="18" height="58" id="pt_s1"/>
+                        <af:image source="/images/csuwordmark.gif" shortDesc="CSU Logo" id="pt_i1"/>
+                        <af:spacer width="120" height="58" id="pt_s2"/>
+                        <af:outputText value="Version Control" id="pt_ot1"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="toolbar"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+            </af:panelHeader>
+        </f:facet>
+        <f:facet name="bottom">
+            <af:outputFormatted id="pt_of1" value="&#169; 2019 California State University | Office of the Chancellor | 401 Golden Shore | Long Beach, CA  90802-4210 | (562)951-4000" styleUsage="pageStamp"
+                                inlineStyle="text-align:right;"/>
+        </f:facet>
+        <f:facet name="center">
+            <af:decorativeBox id="pt_db1">
+                <f:facet name="top"/>
+                <f:facet name="center"><af:facetRef facetName="content"/></f:facet>
+            </af:decorativeBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</af:pageTemplateDef>

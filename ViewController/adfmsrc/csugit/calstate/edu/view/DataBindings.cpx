@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="csugit.calstate.edu.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/templates/csuTempl.jsf" usageId="csugit_calstate_edu_view_csuTemplPageDef"/>
+    <page path="/fragments/csuGitUI.jsff" usageId="csugit_calstate_edu_view_csuGitUIPageDef"/>
+    <page path="/CsuGitHome.jsf" usageId="csugit_calstate_edu_view_CsuGitHomePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="csugit_calstate_edu_view_csuTemplPageDef" path="templates.csuTemplPageDef"/>
+    <page id="csugit_calstate_edu_view_csuGitUIPageDef" path="fragments.csuGitUIPageDef"/>
+    <page id="csugit_calstate_edu_view_CsuGitHomePageDef" path="csugit.calstate.edu.view.pageDefs.CsuGitHomePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="csugitAMDataControl" Package="csugit.calstate.edu.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="csugitAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

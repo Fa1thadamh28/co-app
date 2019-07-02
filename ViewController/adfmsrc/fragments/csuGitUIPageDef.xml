@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="csuGitUIPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UadbCampusV1" RangeSize="25" DataControl="csugitAMDataControl" id="UadbCampusV1Iterator"/>
+    <searchRegion Criteria="UadbCampusVCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="UadbCampusV1Iterator" id="UadbCampusVCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="UadbCampusV1Iterator" id="UadbCampusV1">
+      <nodeDefinition DefName="csugit.calstate.edu.model.queries.UadbCampusV" Name="UadbCampusV10">
+        <AttrNames>
+          <Item Value="AcademicTerm"/>
+          <Item Value="CampusCode"/>
+          <Item Value="CampusName"/>
+          <Item Value="PeerGroup"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

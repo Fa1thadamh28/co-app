@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="CsuGitHomePageDef"
+                Package="csugit.calstate.edu.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="templates.csuTemplPageDef" id="ptb1" Refresh="ifNeeded"/>
+    <taskFlow id="csuGitflow1" taskFlowId="/WEB-INF/csuGit-flow.xml#csuGit-flow" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

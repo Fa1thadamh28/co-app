@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UadbCampus"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="UADB_CAMPUS"
+  AliasName="UadbCampus"
+  BindingStyle="OracleName"
+  RowClass="csugit.calstate.edu.model.framework.CsugitEntityImpl">
+  <Attribute
+    Name="CampusCode"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="CAMPUS_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="UADB_CAMPUS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CampusName"
+    Precision="50"
+    ColumnName="CAMPUS_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="UADB_CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PeerGroup"
+    Precision="1"
+    ColumnName="PEER_GROUP"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="UADB_CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AcademicTerm"
+    Precision="1"
+    ColumnName="ACADEMIC_TERM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="UADB_CAMPUS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="UadbCampusPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="UADB_CAMPUS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="csugit.calstate.edu.model.entities.UadbCampus.CampusCode"/>
+    </AttrArray>
+  </Key>
+</Entity>

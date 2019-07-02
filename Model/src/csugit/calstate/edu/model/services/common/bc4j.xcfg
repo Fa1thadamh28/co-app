@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="csugit.calstate.edu.model.services.csugitAM">
+    <AppModuleConfig name="csugitAMLocal" jbo.project="csugit.calstate.edu.model.Model"
+                     ApplicationName="csugit.calstate.edu.model.services.csugitAM" DeployPlatform="LOCAL"
+                     JDBCName="csugConn">
+      <Database jbo.TypeMapEntries="OracleApps"/>
+      <Security AppModuleJndiName="csugit.calstate.edu.model.services.csugitAM"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="csugitAMShared" jbo.project="csugit.calstate.edu.model.Model"
+                     ApplicationName="csugit.calstate.edu.model.services.csugitAM" DeployPlatform="LOCAL"
+                     JDBCName="csugConn">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps"/>
+      <Security AppModuleJndiName="csugit.calstate.edu.model.services.csugitAM"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

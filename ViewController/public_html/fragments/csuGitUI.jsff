@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" topHeight="180px">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelHeader text="CSU Campuses" id="ph1">
+        
+            <af:query id="qryId1" headerText="Search" disclosed="true"
+                      value="#{bindings.UadbCampusVCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.UadbCampusVCriteriaQuery.queryModel}"
+                      queryListener="#{bindings.UadbCampusVCriteriaQuery.processQuery}"
+                      queryOperationListener="#{bindings.UadbCampusVCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::pc1:resId1"/>
+         
+       
+      </af:panelHeader>
+    </f:facet>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelCollection id="pc1">
+        <f:facet name="menus">
+          <af:menu text="My Option(s)" id="m1">
+            <af:commandMenuItem text="Export 2 Excel" id="cmi1" partialTriggers="::qryId1"
+                                disabled="#{bindings.UadbCampusV1Iterator.estimatedRowCount lt 1}">
+              <af:exportCollectionActionListener type="excelHTML" exportedId="resId1" filename="CsuCampus.xls"
+                                                 title="CSU Campus"/>
+            </af:commandMenuItem>
+          </af:menu>
+        </f:facet>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.UadbCampusV1.collectionModel}" var="row" rows="#{bindings.UadbCampusV1.rangeSize}"
+                  emptyText="#{bindings.UadbCampusV1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.UadbCampusV1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.UadbCampusV1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.UadbCampusV1.rangeSize}" id="resId1" summary="CSU Campus">
+          <af:column sortProperty="#{bindings.UadbCampusV1.hints.CampusCode.name}" sortable="true"
+                     headerText="#{bindings.UadbCampusV1.hints.CampusCode.label}" id="resId1c2">
+            <af:outputText value="#{row.CampusCode}" shortDesc="#{bindings.UadbCampusV1.hints.CampusCode.tooltip}"
+                           id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.UadbCampusV1.hints.CampusName.name}" sortable="true"
+                     headerText="#{bindings.UadbCampusV1.hints.CampusName.label}" id="resId1c3">
+            <af:outputText value="#{row.CampusName}" shortDesc="#{bindings.UadbCampusV1.hints.CampusName.tooltip}"
+                           id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.UadbCampusV1.hints.AcademicTerm.name}"
+                     headerText="#{bindings.UadbCampusV1.hints.AcademicTerm.label}" id="resId1c1">
+            <af:outputText value="#{row.AcademicTerm}" shortDesc="#{bindings.UadbCampusV1.hints.AcademicTerm.tooltip}"
+                           id="ot1"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.UadbCampusV1.hints.PeerGroup.name}"
+                     headerText="#{bindings.UadbCampusV1.hints.PeerGroup.label}" id="resId1c4">
+            <af:outputText value="#{row.PeerGroup}" shortDesc="#{bindings.UadbCampusV1.hints.PeerGroup.tooltip}"
+                           id="ot4"/>
+          </af:column>
+        </af:table>
+        <f:facet name="afterToolbar">
+          <af:group id="g1">
+            <af:outputText value="Total record(s) found : #{bindings.UadbCampusV1Iterator.estimatedRowCount}" id="ot5"
+                           partialTriggers="::qryId1"/>
+          </af:group>
+        </f:facet>
+      </af:panelCollection>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>
