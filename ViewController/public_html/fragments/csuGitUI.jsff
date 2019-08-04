@@ -5,16 +5,13 @@
     <f:facet name="start"/>
     <f:facet name="end"/>
     <f:facet name="top">
-      <af:panelHeader text="CSU Campuses (Feature-1 Test Again)" id="ph1">
-        
-            <af:query id="qryId1" headerText="Search" disclosed="true"
+      <af:panelHeader text="CSU Campuses (Git - Perform Changes)" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
                       value="#{bindings.UadbCampusVCriteriaQuery.queryDescriptor}"
                       model="#{bindings.UadbCampusVCriteriaQuery.queryModel}"
                       queryListener="#{bindings.UadbCampusVCriteriaQuery.processQuery}"
                       queryOperationListener="#{bindings.UadbCampusVCriteriaQuery.processQueryOperation}"
                       resultComponentId="::pc1:resId1"/>
-         
-       
       </af:panelHeader>
     </f:facet>
     <f:facet name="bottom"/>
